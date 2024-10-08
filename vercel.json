@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "api/src/server.tjs",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "ui/package.json",
+            "use": "@vercel/next"
+        }
+    ],
+    "routes": [
+        { "src": "/api/(.*)", "dest": "api/src/server.tjs" }
+    ],
+    "env": {
+        "NODE_ENV": "production"
+    }
+}
